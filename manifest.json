@@ -1,0 +1,32 @@
+{
+  "name": "Tool Hub",
+  "short_name": "Tool Hub",
+  "description": "বিনামূল্যে ক্লায়েন্ট-সাইড টুলসমালা — কিউআর, জিপ, জেএসওএন, পাসওয়ার্ড, ইউইউআইডি, বেস৬৪ ও আরও। কোনো সার্ভার ছাড়া।",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b0d17",
+  "theme_color": "#0b0d17",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "id": "./",
+  "lang": "bn",
+  "scope": "./"
+}

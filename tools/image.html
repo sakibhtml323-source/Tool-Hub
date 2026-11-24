@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ক্লায়েন্ট-সাইড ইমেজ কমপ্রেসর। ছবির আকার ছোট করে JPEG হিসেবে ডাউনলোড করুন।" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://sakibhtml323-source.github.io/Tool-Hub/tools/image.html" />
+  <meta name="author" content="sakibhtml323-source (sakibsheikho69252@gmail.com)" />
+  <meta property="og:title" content="ইমেজ কমপ্রেসর | Tool Hub" />
+  <meta property="og:description" content="ক্লায়েন্ট-সাইড ইমেজ কমপ্রেসর। ছবির আকার ছোট করে JPEG হিসেবে ডাউনলোড করুন।" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sakibhtml323-source.github.io/Tool-Hub/tools/image.html" />
+  <meta property="og:image" content="https://sakibhtml323-source.github.io/Tool-Hub/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0b0d17" />
+  <meta name="twitter:title" content="ইমেজ কমপ্রেসর | Tool Hub" />
+  <meta name="twitter:description" content="ক্লায়েন্ট-সাইড ইমেজ কমপ্রেসর। ছবির আকার ছোট করে JPEG হিসেবে ডাউনলোড করুন।" />
+  <meta name="twitter:image" content="https://sakibhtml323-source.github.io/Tool-Hub/assets/og-image.png" />
+  <link rel="icon" href="../assets/logo.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <title>ইমেজ কমপ্রেসর | Tool Hub</title>
+</head>
+<body>
+  <a href="#main" class="skip-link">মূল কন্টেন্টে যাও</a>
+
+  <header>
+    <div class="container nav">
+      <a href="../index.html" class="back" aria-label="হোমে ফেরা">← Tool Hub</a>
+      <nav class="breadcrumb" style="font-size:0.85rem;color:var(--muted);margin-bottom:0.5rem;">
+        <a href="../index.html" style="color:var(--muted);text-decoration:none;">হোম</a> &gt; ইমেজ কমপ্রেসর
+      </nav>
+      <h1 style="font-size:1.15rem;font-weight:800;letter-spacing:-0.01em;">ইমেজ কমপ্রেসর</h1>
+      <div style="font-size:0.85rem;color:var(--muted);">চিত্র আকার ছোট করুন</div>
+    </div>
+  </header>
+
+  <main id="main" class="tool-page">
+    <div class="container">
+      <div class="tool-shell">
+        <div class="field">
+          <label for="img-file">চিত্র ফাইল সিলেক্ট করুন</label>
+          <input type="file" id="img-file" accept="image/*" class="file-input" />
+        </div>
+        <div class="field">
+          <label for="img-quality">গুণগত মান (%)</label>
+          <input type="number" id="img-quality" value="0.8" min="0.1" max="1" step="0.1" />
+        </div>
+        <div class="btn-group">
+          <button id="img-compress" class="btn btn-primary" type="button" disabled>কমপ্রেস করুন</button>
+          <button id="img-download" class="btn btn-outline" type="button" disabled>ডাউনলোড করুন</button>
+        </div>
+
+        <p class="howto">ছবি বেছে মান ঠিক করে কমপ্রেস করুন। ছবি JPEG হিসেবে সেভ হয় (স্বচ্ছ অংশ সাদা হয়ে যায়) এবং কিছুই আপনার ব্রাউজারের বাইরে যায় না।</p>
+        <div id="img-alert" class="alert alert-info" role="status" aria-live="polite"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="#6366f1" stroke-width="2"/><path d="M12 8h.01M11 12h1v5h1" stroke="#6366f1" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span></span></div>
+
+        <img id="img-preview" class="img-preview" alt="প্রিভিও" />
+        <div id="img-info" style="margin-top:1rem;color:var(--muted);font-size:0.85rem;"></div>
+        <div class="output-box" id="img-output" style="max-height:320px;text-align:center;">
+          <div class="output-header"><span class="lbl">কমপ্রেসড প্রিভিউ</span></div>
+          <canvas id="img-canvas" style="border:1px solid var(--border);border-radius:8px;max-width:100%;display:none;"></canvas>
+          <div id="img-placeholder" style="color:var(--muted);font-size:0.9rem;">কমপ্রেসড ছবি এখানে আসবে</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p style="color:var(--muted);font-size:0.8rem;text-align:center;">ক্লায়েন্ট-সাইড — ডাটা ব্রাউজারের বাইরে যাবে না।</p>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "ইমেজ কমপ্রেসর | Tool Hub",
+    "url": "https://sakibhtml323-source.github.io/Tool-Hub/tools/image.html",
+    "description": "ক্লায়েন্ট-সাইড ইমেজ কমপ্রেসর। ছবির আকার ছোট করে JPEG হিসেবে ডাউনলোড করুন।",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Tool Hub",
+      "url": "https://sakibhtml323-source.github.io/Tool-Hub/"
+    }
+  }
+  </script>
+
+  <script src="../assets/js/common.js"></script>
+  <script src="../assets/js/tool-image.js"></script>
+</body>
+</html>
