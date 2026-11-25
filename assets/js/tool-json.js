@@ -19,10 +19,10 @@
     dl.href = url; dl.download = name; dl.style.display = 'inline-flex';
   }
   function parse() {
-    if (!input.value.trim()) { show('দয়া করে জেএসওএন লিখুন', 'error'); return undefined; }
+    if (!input.value.trim()) { show('Please enter JSON', 'error'); return undefined; }
     try { return { v: JSON.parse(input.value) }; }
     catch (e) {
-      show('অবৈধ জেএসওএন: ' + e.message, 'error');
+      show('Invalid JSON:  ' + e.message, 'error');
       box.classList.remove('has-content'); out.textContent = ''; dl.style.display = 'none';
       return undefined;
     }
@@ -34,14 +34,14 @@
     hide(); var p = parse(); if (p) render(JSON.stringify(p.v), 'minified.json');
   });
   document.getElementById('json-validate').addEventListener('click', function () {
-    var p = parse(); if (p) show('সঠিক জেএসওএন — কোনো ত্রুটি নেই।', 'success');
+    var p = parse(); if (p) show('Valid JSON — no errors.', 'success');
   });
   copyBtn.addEventListener('click', function () {
     var t = out.textContent;
-    if (!t || t === 'আউটপুট এখানে আসবে') return;
+    if (!t || t === 'Output will appear here') return;
     ToolHub.copy(t).then(function () {
-      copyBtn.textContent = 'কপি করা হয়েছে!'; copyBtn.classList.add('copied');
-      setTimeout(function () { copyBtn.textContent = 'কপি'; copyBtn.classList.remove('copied'); }, 1500);
+      copyBtn.textContent = 'Copied!'; copyBtn.classList.add('copied');
+      setTimeout(function () { copyBtn.textContent = 'Copy'; copyBtn.classList.remove('copied'); }, 1500);
     });
   });
 })();

@@ -41,9 +41,9 @@
     document.getElementById('pw-digit').textContent = c(/[0-9]/g);
     document.getElementById('pw-symbol').textContent = c(/[^A-Za-z0-9]/g);
     var bits = entropyBits(pw), pct = Math.min(100, Math.round(bits / 80 * 100)), color, label;
-    if (bits < 40) { color = '#ef4444'; label = 'দুর্বল'; }
-    else if (bits < 60) { color = '#f59e0b'; label = 'মধ্যম'; }
-    else { color = '#22c55e'; label = 'শক্তিশালী'; }
+    if (bits < 40) { color = '#ef4444'; label = 'Weak'; }
+    else if (bits < 60) { color = '#f59e0b'; label = 'Medium'; }
+    else { color = '#22c55e'; label = 'Strong'; }
     meter.style.width = pct + '%'; meter.style.background = color;
     score.textContent = pw ? label : ''; score.style.color = color;
     details.style.display = pw ? 'grid' : 'none';
@@ -55,13 +55,13 @@
     for (i = out.length; i < 16; i++) out.push(all[randInt(all.length)]);
     for (i = out.length - 1; i > 0; i--) { var j = randInt(i + 1), t = out[i]; out[i] = out[j]; out[j] = t; }
     input.value = out.join(''); analyze(input.value);
-    copyBtn.disabled = false; copyBtn.textContent = 'কপি';
+    copyBtn.disabled = false; copyBtn.textContent = 'Copy';
   });
   copyBtn.addEventListener('click', function () {
     if (!input.value) return;
     ToolHub.copy(input.value).then(function () {
-      copyBtn.textContent = 'কপি করা হয়েছে!';
-      setTimeout(function () { copyBtn.textContent = 'কপি'; }, 1500);
+      copyBtn.textContent = 'Copied!';
+      setTimeout(function () { copyBtn.textContent = 'Copy'; }, 1500);
     });
   });
 })();

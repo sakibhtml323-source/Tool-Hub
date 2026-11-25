@@ -69,7 +69,7 @@
     var c = parseColor(input.value);
     if (!c) {
       alertBox.className = 'alert alert-error show';
-      alertBox.querySelector('span').textContent = 'সঠিক রঙের কোড লিখুন (যেমন #6366f1, rgb(99,102,241) বা hsl(239,84%,67%))';
+      alertBox.querySelector('span').textContent = 'Enter a valid color code (e.g. #6366f1, rgb(99,102,241) or hsl(239,84%,67%))';
       return;
     }
     alertBox.className = 'alert alert-info';
@@ -84,8 +84,8 @@
   input.addEventListener('keydown', function (e) { if (e.key === 'Enter') convert(); });
   copyBtn.addEventListener('click', function () {
     ToolHub.copy(hexVal.textContent + '\n' + rgbVal.textContent + '\n' + hslVal.textContent).then(function () {
-      copyBtn.textContent = 'কপি করা হয়েছে!'; copyBtn.classList.add('copied');
-      setTimeout(function () { copyBtn.textContent = 'কপি সব'; copyBtn.classList.remove('copied'); }, 1500);
+      copyBtn.textContent = 'Copied!'; copyBtn.classList.add('copied');
+      setTimeout(function () { copyBtn.textContent = 'Copy all'; copyBtn.classList.remove('copied'); }, 1500);
     });
   });
 })();

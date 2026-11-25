@@ -2,11 +2,11 @@
 
 ## v1.0.0 — 2026-11-23
 
-প্রথম স্থিতিশীল রিলিজ।
+First stable release.
 
-- জিপ কংপ্রেসর: বাইরের লাইব্রেরি ছাড়া নিজস্ব ZIP লেখক
-- হ্যাশ জেনারেটর: সঠিক MD5 (Node crypto-র সাথে মিলিয়ে যাচাই করা)
-- কালার, ইমেজ, HTML মিনিফায়ার, পাসওয়ার্ড, QR ও কাউন্টার টুলের বাগ ফিক্স
-- বাংলা টেক্সটের ভুল অক্ষর ও বিবরণ সংশোধন
-- কঠোর Content-Security-Policy, মোবাইল UI ফিক্স
-- 404 পেজ, PNG আইকন, শেয়ার-ইমেজ, হালনাগাদ manifest ও sitemap
+- ZIP Compressor: custom built-in ZIP writer with no external library
+- Hash Generator: correct MD5 (verified against Node crypto)
+- Bug fixes for the Color, Image, HTML Minifier, Password, QR and Counter tools
+- Corrected wrong characters and descriptions in the Bengali text
+- Strict Content-Security-Policy, mobile UI fixes
+- 404 page, PNG icons, share image, updated manifest and sitemap

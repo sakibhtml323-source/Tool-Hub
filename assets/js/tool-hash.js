@@ -41,15 +41,15 @@
 
   btn.addEventListener('click', async function () {
     var t = input.value;
-    if (!t) { show('দয়া করে টেক্সট লিখুন', 'error'); return; }
+    if (!t) { show('Please enter some text', 'error'); return; }
     var enc = new TextEncoder().encode(t);
     try {
       var algos = { sha256: 'SHA-256', sha384: 'SHA-384', sha512: 'SHA-512', sha1: 'SHA-1' };
       for (var k in algos) document.getElementById('hash-' + k).textContent = hex(await crypto.subtle.digest(algos[k], enc));
       document.getElementById('hash-md5').textContent = md5(enc);
       results.style.display = 'grid'; copyBtn.disabled = false;
-      show('হ্যাশ তৈরি করা হলো।', 'success');
-    } catch (e) { show('সমস্যা: ' + e.message, 'error'); }
+      show('Hashes generated.', 'success');
+    } catch (e) { show('Error:  ' + e.message, 'error'); }
   });
 
   copyBtn.addEventListener('click', function () {
@@ -57,8 +57,8 @@
       return k.toUpperCase().replace('SHA', 'SHA-') .replace('SHA-256', 'SHA-256') + ': ' + document.getElementById('hash-' + k).textContent;
     }).join('\n');
     ToolHub.copy(t).then(function () {
-      copyBtn.textContent = 'কপি করা হয়েছে!'; copyBtn.classList.add('copied');
-      setTimeout(function () { copyBtn.textContent = 'কপি সব'; copyBtn.classList.remove('copied'); }, 1500);
+      copyBtn.textContent = 'Copied!'; copyBtn.classList.add('copied');
+      setTimeout(function () { copyBtn.textContent = 'Copy all'; copyBtn.classList.remove('copied'); }, 1500);
     });
   });
 })();

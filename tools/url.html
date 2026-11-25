@@ -1,38 +1,38 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ক্লায়েন্ট-সাইড URL এনকোডার ও ডিকোডার। কুয়েরি স্ট্রিং এনকোড বা ডিকোড করুন।" />
+  <meta name="description" content="Client-side URL encoder and decoder. Encode or decode query strings." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://sakibhtml323-source.github.io/Tool-Hub/tools/url.html" />
   <meta name="author" content="sakibhtml323-source (sakibsheikho69252@gmail.com)" />
-  <meta property="og:title" content="URL এনকোডার | Tool Hub" />
-  <meta property="og:description" content="ক্লায়েন্ট-সাইড URL এনকোডার ও ডিকোডার। কুয়েরি স্ট্রিং এনকোড বা ডিকোড করুন।" />
+  <meta property="og:title" content="URL Encoder | Tool Hub" />
+  <meta property="og:description" content="Client-side URL encoder and decoder. Encode or decode query strings." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sakibhtml323-source.github.io/Tool-Hub/tools/url.html" />
   <meta property="og:image" content="https://sakibhtml323-source.github.io/Tool-Hub/assets/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#0b0d17" />
-  <meta name="twitter:title" content="URL এনকোডার | Tool Hub" />
-  <meta name="twitter:description" content="ক্লায়েন্ট-সাইড URL এনকোডার ও ডিকোডার। কুয়েরি স্ট্রিং এনকোড বা ডিকোড করুন।" />
+  <meta name="twitter:title" content="URL Encoder | Tool Hub" />
+  <meta name="twitter:description" content="Client-side URL encoder and decoder. Encode or decode query strings." />
   <meta name="twitter:image" content="https://sakibhtml323-source.github.io/Tool-Hub/assets/og-image.png" />
   <link rel="icon" href="../assets/logo.svg" />
   <link rel="stylesheet" href="../assets/css/style.css" />
-  <title>URL এনকোডার | Tool Hub</title>
+  <title>URL Encoder | Tool Hub</title>
 </head>
 <body>
-  <a href="#main" class="skip-link">মূল কন্টেন্টে যাও</a>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <header>
     <div class="container nav">
-      <a href="../index.html" class="back" aria-label="হোমে ফেরা">← Tool Hub</a>
+      <a href="../index.html" class="back" aria-label="Back to home">← Tool Hub</a>
       <nav class="breadcrumb" style="font-size:0.85rem;color:var(--muted);margin-bottom:0.5rem;">
-        <a href="../index.html" style="color:var(--muted);text-decoration:none;">হোম</a> &gt; URL এনকোডার
+        <a href="../index.html" style="color:var(--muted);text-decoration:none;">Home</a> &gt; URL Encoder
       </nav>
-      <h1 style="font-size:1.15rem;font-weight:800;letter-spacing:-0.01em;">URL এনকোডার</h1>
-      <div style="font-size:0.85rem;color:var(--muted);">ইউআরএল এনকোড / ডিকোড করুন</div>
+      <h1 style="font-size:1.15rem;font-weight:800;letter-spacing:-0.01em;">URL Encoder</h1>
+      <div style="font-size:0.85rem;color:var(--muted);">Encode / decode URLs</div>
     </div>
   </header>
 
@@ -40,24 +40,24 @@
     <div class="container">
       <div class="tool-shell">
         <div class="field">
-          <label for="url-input">ইউআরএল বা টেক্সট লিখুন</label>
-          <textarea id="url-input" placeholder="যেমন: https://sakibhtml323-source.github.io/Tool-Hub/?q=টুল হাব"></textarea>
+          <label for="url-input">Enter a URL or text</label>
+          <textarea id="url-input" placeholder="e.g. https://sakibhtml323-source.github.io/Tool-Hub/?q=Tool Hub"></textarea>
         </div>
         <div class="btn-group">
-          <button id="url-encode" class="btn btn-primary" type="button">এনকোড (Encode)</button>
-          <button id="url-decode" class="btn btn-outline" type="button">ডিকোড (Decode)</button>
-          <button id="url-copy" class="btn btn-ghost" type="button">কপি</button>
+          <button id="url-encode" class="btn btn-primary" type="button">Encode</button>
+          <button id="url-decode" class="btn btn-outline" type="button">Decode</button>
+          <button id="url-copy" class="btn btn-ghost" type="button">Copy</button>
         </div>
 
-        <p class="howto">টেক্সট বা কুয়েরি স্ট্রিং লিখে এনকোড বা ডিকোড করুন। এনকোড করলে বিশেষ চিহ্ন নিরাপদ রূপে (%XX) বদলে যায়।</p>
+        <p class="howto">Enter text or a query string, then encode or decode it. Encoding converts special characters into a safe form (%XX).</p>
         <div id="url-alert" class="alert alert-info" role="status" aria-live="polite"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="#6366f1" stroke-width="2"/><path d="M12 8h.01M11 12h1v5h1" stroke="#6366f1" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span></span></div>
 
         <div class="output-box" id="url-output" aria-live="polite">
           <div class="output-header">
-            <span class="lbl">ফলাফল</span>
-            <button id="url-copy-btn" class="copy-btn" type="button">কপি</button>
+            <span class="lbl">Result</span>
+            <button id="url-copy-btn" class="copy-btn" type="button">Copy</button>
           </div>
-          <div id="url-output-text">আউটপুট এখানে আসবে</div>
+          <div id="url-output-text">Output will appear here</div>
         </div>
       </div>
     </div>
@@ -65,7 +65,7 @@
 
   <footer>
     <div class="container">
-      <p style="color:var(--muted);font-size:0.8rem;text-align:center;">ক্লায়েন্ট-সাইড — ডাটা ব্রাউজারের বাইরে যাবে না।</p>
+      <p style="color:var(--muted);font-size:0.8rem;text-align:center;">Client-side — data never leaves your browser.</p>
     </div>
   </footer>
 
@@ -73,9 +73,9 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "URL এনকোডার | Tool Hub",
+    "name": "URL Encoder | Tool Hub",
     "url": "https://sakibhtml323-source.github.io/Tool-Hub/tools/url.html",
-    "description": "ক্লায়েন্ট-সাইড URL এনকোডার ও ডিকোডার। কুয়েরি স্ট্রিং এনকোড বা ডিকোড করুন।",
+    "description": "Client-side URL encoder and decoder. Encode or decode query strings.",
     "isPartOf": {
       "@type": "WebSite",
       "name": "Tool Hub",

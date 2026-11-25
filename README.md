@@ -1,62 +1,62 @@
 # Tool Hub
 
-বিনামূল্যে ক্লায়েন্ট-সাইড টুলসমালা। কোনো ব্যাকএন্ড, ডাটাবেস বা পেইড API নেই। সবকিছু ব্রাউজারের ভেতরেই কাজ করে।
+A free client-side toolkit. No backend, database or paid API. Everything works inside the browser.
 
-লাইভ সাইট: https://sakibhtml323-source.github.io/Tool-Hub/
+Live site: https://sakibhtml323-source.github.io/Tool-Hub/
 
-## টুল তালিকা
+## Tools
 
-- QR Code জেনারেটর (PNG ডাউনলোডসহ)
-- জিপ কংপ্রেসর (নিজস্ব ZIP লেখক, কোনো বাইরের লাইব্রেরি ছাড়া)
-- জেএসওএন ফরম্যাটার / মিনিফায়ার / ভ্যালিডেটর
-- পাসওয়ার্ড চেকার ও নিরাপদ পাসওয়ার্ড জেনারেটর
-- UUID v4 জেনারেটর
-- বেস৬৪ এনকোডার / ডিকোডার
-- URL এনকোডার / ডিকোডার
-- HTML মিনিফায়ার
-- ক্যারেক্টার, শব্দ ও বাক্য কাউন্টার
-- রঙ রূপান্তরকারী (HEX / RGB / HSL / রঙের নাম)
-- ইমেজ কমপ্রেসর (ক্যানভাস, JPEG)
-- হ্যাশ জেনারেটর (SHA-256 / SHA-384 / SHA-512 / SHA-1 / MD5)
-- টেক্সট কেস কনভার্টার
+- QR Code generator (with PNG download)
+- ZIP Compressor (custom ZIP writer, no external library)
+- JSON formatter / minifier / validator
+- Password checker and secure password generator
+- UUID v4 generator
+- Base64 encoder / decoder
+- URL encoder / decoder
+- HTML minifier
+- Character, word and sentence counter
+- Color converter (HEX / RGB / HSL / color names)
+- Image compressor (canvas, JPEG)
+- Hash generator (SHA-256 / SHA-384 / SHA-512 / SHA-1 / MD5)
+- Text case converter
 
-## বৈশিষ্ট্য
+## Features
 
-- ১০০% ক্লায়েন্ট-সাইড: ডাটা ব্রাউজারের বাইরে যায় না
-- কোনো সার্ভার, ডাটাবেস, অ্যাকাউন্ট, কুকি বা অ্যানালিটিক্স নেই
-- কঠোর Content-Security-Policy (শুধু নিজের ফাইল থেকে স্ক্রিপ্ট চলে)
-- মোবাইল-ফ্রেন্ডলি রেসপন্সিভ ডিজাইন
-- SEO: মেটা ট্যাগ, Open Graph, Twitter Card, canonical, sitemap, robots, manifest
+- 100% client-side: data never leaves the browser
+- No server, database, account, cookies or analytics
+- Strict Content-Security-Policy (scripts run only from the site's own files)
+- Mobile-friendly responsive design
+- SEO: meta tags, Open Graph, Twitter Card, canonical, sitemap, robots, manifest
 
-## লোকালি চালানো
+## Running locally
 
-কোনো বিল্ড ধাপ নেই। ফোল্ডারটিতে যেকোনো স্ট্যাটিক সার্ভার চালান:
+There is no build step. Serve the folder with any static server:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-তারপর http://localhost:8000 খুলুন।
+Then open http://localhost:8000.
 
-## GitHub Pages-এ ডেপ্লয়
+## Deploying to GitHub Pages
 
-১. রেপো তৈরি করুন (নাম `Tool-Hub`) এবং সব ফাইল `main` ব্রাঞ্চে পুশ করুন।
-২. Settings → Pages → Source: `main` / root নির্বাচন করুন।
-৩. সাইট চালু হবে https://sakibhtml323-source.github.io/Tool-Hub/ ঠিকানায়।
+1. Create a repo (named `Tool-Hub`) and push all files to the `main` branch.
+2. Go to Settings → Pages → Source: select `main` / root.
+3. The site will go live at https://sakibhtml323-source.github.io/Tool-Hub/.
 
-রেপোর নাম আলাদা হলে `index.html`, `tools/*.html`, `sitemap.xml`, `robots.txt` ও `404.html`-এ `/Tool-Hub/` অংশটি বদলে নিন।
+If the repo name is different, in `index.html`, `tools/*.html`, `sitemap.xml`, `robots.txt` and `404.html`, replace the `/Tool-Hub/` part.
 
-## লেখক
+## Author
 
 - GitHub: https://github.com/sakibhtml323-source
-- ইমেল: sakibsheikho69252@gmail.com
+- Email: sakibsheikho69252@gmail.com
 
-## লাইসেন্স
+## License
 
-MIT লাইসেন্স। বিস্তারিত `LICENSE` ফাইলে।
+MIT License. See the `LICENSE` file for details.
 
-## তৃতীয় পক্ষের কোড
+## Third-party code
 
-- `assets/js/qrcode.min.js`: [QRCode.js](https://github.com/davidshimjs/qrcodejs) (MIT লাইসেন্স)
+- `assets/js/qrcode.min.js`: [QRCode.js](https://github.com/davidshimjs/qrcodejs) (MIT License)
 
-বাকি সব কোড এই প্রজেক্টের নিজস্ব।
+All other code is original to this project.

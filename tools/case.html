@@ -1,38 +1,38 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ক্লায়েন্ট-সাইড টেক্সট কেস কনভার্টার। লোয়ার, আপার, টাইটেল ও সেন্টেন্স কেসে রূপান্তর করুন।" />
+  <meta name="description" content="Client-side text case converter. Convert to lower, upper, title and sentence case." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://sakibhtml323-source.github.io/Tool-Hub/tools/case.html" />
   <meta name="author" content="sakibhtml323-source (sakibsheikho69252@gmail.com)" />
-  <meta property="og:title" content="টেক্সট কেস কনভার্টার | Tool Hub" />
-  <meta property="og:description" content="ক্লায়েন্ট-সাইড টেক্সট কেস কনভার্টার। লোয়ার, আপার, টাইটেল ও সেন্টেন্স কেসে রূপান্তর করুন।" />
+  <meta property="og:title" content="Text Case Converter | Tool Hub" />
+  <meta property="og:description" content="Client-side text case converter. Convert to lower, upper, title and sentence case." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sakibhtml323-source.github.io/Tool-Hub/tools/case.html" />
   <meta property="og:image" content="https://sakibhtml323-source.github.io/Tool-Hub/assets/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#0b0d17" />
-  <meta name="twitter:title" content="টেক্সট কেস কনভার্টার | Tool Hub" />
-  <meta name="twitter:description" content="ক্লায়েন্ট-সাইড টেক্সট কেস কনভার্টার। লোয়ার, আপার, টাইটেল ও সেন্টেন্স কেসে রূপান্তর করুন।" />
+  <meta name="twitter:title" content="Text Case Converter | Tool Hub" />
+  <meta name="twitter:description" content="Client-side text case converter. Convert to lower, upper, title and sentence case." />
   <meta name="twitter:image" content="https://sakibhtml323-source.github.io/Tool-Hub/assets/og-image.png" />
   <link rel="icon" href="../assets/logo.svg" />
   <link rel="stylesheet" href="../assets/css/style.css" />
-  <title>টেক্সট কেস কনভার্টার | Tool Hub</title>
+  <title>Text Case Converter | Tool Hub</title>
 </head>
 <body>
-  <a href="#main" class="skip-link">মূল কন্টেন্টে যাও</a>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <header>
     <div class="container nav">
-      <a href="../index.html" class="back" aria-label="হোমে ফেরা">← Tool Hub</a>
+      <a href="../index.html" class="back" aria-label="Back to home">← Tool Hub</a>
       <nav class="breadcrumb" style="font-size:0.85rem;color:var(--muted);margin-bottom:0.5rem;">
-        <a href="../index.html" style="color:var(--muted);text-decoration:none;">হোম</a> &gt; টেক্সট কেস কনভার্টার
+        <a href="../index.html" style="color:var(--muted);text-decoration:none;">Home</a> &gt; Text Case Converter
       </nav>
-      <h1 style="font-size:1.15rem;font-weight:800;letter-spacing:-0.01em;">টেক্সট কেস কনভার্টার</h1>
-      <div style="font-size:0.85rem;color:var(--muted);">সেন্টেন্স, লোয়ার, আপার, টাইটেল কেস</div>
+      <h1 style="font-size:1.15rem;font-weight:800;letter-spacing:-0.01em;">Text Case Converter</h1>
+      <div style="font-size:0.85rem;color:var(--muted);">Sentence, lower, upper, title case</div>
     </div>
   </header>
 
@@ -40,23 +40,23 @@
     <div class="container">
       <div class="tool-shell">
         <div class="field">
-          <label for="case-input">টেক্সট লিখুন</label>
+          <label for="case-input">Enter text</label>
           <textarea id="case-input" placeholder="hello world tool hub"></textarea>
         </div>
         <div class="btn-group">
-          <button id="case-lower" class="btn btn-outline" type="button">লোয়ার কেস</button>
-          <button id="case-upper" class="btn btn-outline" type="button">আপার কেস</button>
-          <button id="case-title" class="btn btn-outline" type="button">টাইটেল কেস</button>
-          <button id="case-sentence" class="btn btn-primary" type="button">সেন্টেন্স কেস</button>
-          <button id="case-copy" class="btn btn-ghost" type="button">কপি</button>
+          <button id="case-lower" class="btn btn-outline" type="button">Lower Case</button>
+          <button id="case-upper" class="btn btn-outline" type="button">Upper Case</button>
+          <button id="case-title" class="btn btn-outline" type="button">Title Case</button>
+          <button id="case-sentence" class="btn btn-primary" type="button">Sentence Case</button>
+          <button id="case-copy" class="btn btn-ghost" type="button">Copy</button>
         </div>
 
-        <p class="howto">টেক্সট লিখে একটি কেস বাটনে ট্যাপ করুন, তারপর ফলাফল কপি করুন। কেস শুধু ইংরেজি অক্ষরে প্রযোজ্য; বাংলা অক্ষরে বড়-ছোট হাতের ভেদ নেই।</p>
+        <p class="howto">Enter text, tap a case button, then copy the result. Case applies only to Latin letters; Bengali script has no uppercase/lowercase distinction.</p>
         <div id="case-alert" class="alert alert-info" role="status" aria-live="polite"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="#6366f1" stroke-width="2"/><path d="M12 8h.01M11 12h1v5h1" stroke="#6366f1" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span></span></div>
 
         <div class="output-box" id="case-output" aria-live="polite">
-          <div class="output-header"><span class="lbl">ফলাফল</span><button id="case-copy-btn" class="copy-btn" type="button">কপি</button></div>
-          <div id="case-output-text">আউটপুট এখানে আসবে</div>
+          <div class="output-header"><span class="lbl">Result</span><button id="case-copy-btn" class="copy-btn" type="button">Copy</button></div>
+          <div id="case-output-text">Output will appear here</div>
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@
 
   <footer>
     <div class="container">
-      <p style="color:var(--muted);font-size:0.8rem;text-align:center;">ক্লায়েন্ট-সাইড — ডাটা ব্রাউজারের বাইরে যাবে না।</p>
+      <p style="color:var(--muted);font-size:0.8rem;text-align:center;">Client-side — data never leaves your browser.</p>
     </div>
   </footer>
 
@@ -72,9 +72,9 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "টেক্সট কেস কনভার্টার | Tool Hub",
+    "name": "Text Case Converter | Tool Hub",
     "url": "https://sakibhtml323-source.github.io/Tool-Hub/tools/case.html",
-    "description": "ক্লায়েন্ট-সাইড টেক্সট কেস কনভার্টার। লোয়ার, আপার, টাইটেল ও সেন্টেন্স কেসে রূপান্তর করুন।",
+    "description": "Client-side text case converter. Convert to lower, upper, title and sentence case.",
     "isPartOf": {
       "@type": "WebSite",
       "name": "Tool Hub",

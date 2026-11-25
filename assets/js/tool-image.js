@@ -20,7 +20,7 @@
   fileInput.addEventListener('change', function (e) {
     var f = e.target.files[0];
     if (!f) return;
-    if (!/^image\//.test(f.type)) { show('দয়া করে ছবি ফাইল বেছে নিন', 'error'); return; }
+    if (!/^image\//.test(f.type)) { show('Please select an image file', 'error'); return; }
     if (previewUrl) URL.revokeObjectURL(previewUrl);
     file = f; resultBlob = null;
     previewUrl = URL.createObjectURL(f);
@@ -44,16 +44,16 @@
       ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(img, 0, 0);
       canvas.toBlob(function (blob) {
-        if (!blob) { show('কমপ্রেস করা যায়নি', 'error'); return; }
+        if (!blob) { show('Could not compress the image', 'error'); return; }
         resultBlob = blob;
         canvas.style.display = 'block'; placeholder.style.display = 'none';
         downloadBtn.disabled = false;
         var diff = file.size ? Math.round((1 - blob.size / file.size) * 100) : 0;
         info.textContent = baseInfo + ' → ' + kb(blob.size);
-        show(diff > 0 ? 'ছবি কমপ্রেস করা হলো (' + diff + '% ছোট)।' : 'ছবি রূপান্তর হয়েছে, কিন্তু আকার কমেনি। মান কমিয়ে আবার চেষ্টা করুন।', diff > 0 ? 'success' : 'info');
+        show(diff > 0 ? 'Image compressed (' + diff + '% smaller).' : 'Image converted, but the size did not decrease. Lower the quality and try again.', diff > 0 ? 'success' : 'info');
       }, 'image/jpeg', q);
     };
-    img.onerror = function () { URL.revokeObjectURL(url); show('ছবি লোড করতে সমস্যা হয়েছে', 'error'); };
+    img.onerror = function () { URL.revokeObjectURL(url); show('Failed to load the image', 'error'); };
     img.src = url;
   });
 

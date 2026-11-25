@@ -1,38 +1,38 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ক্লায়েন্ট-সাইড জিপ টুল। একাধিক ফাইল বেছে একটি ZIP আর্কাইভ তৈরি করুন।" />
+  <meta name="description" content="Client-side ZIP tool. Select multiple files and create a ZIP archive." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://sakibhtml323-source.github.io/Tool-Hub/tools/zip.html" />
   <meta name="author" content="sakibhtml323-source (sakibsheikho69252@gmail.com)" />
-  <meta property="og:title" content="জিপ কংপ্রেসর | Tool Hub" />
-  <meta property="og:description" content="ক্লায়েন্ট-সাইড জিপ টুল। একাধিক ফাইল বেছে একটি ZIP আর্কাইভ তৈরি করুন।" />
+  <meta property="og:title" content="ZIP Compressor | Tool Hub" />
+  <meta property="og:description" content="Client-side ZIP tool. Select multiple files and create a ZIP archive." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sakibhtml323-source.github.io/Tool-Hub/tools/zip.html" />
   <meta property="og:image" content="https://sakibhtml323-source.github.io/Tool-Hub/assets/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#0b0d17" />
-  <meta name="twitter:title" content="জিপ কংপ্রেসর | Tool Hub" />
-  <meta name="twitter:description" content="ক্লায়েন্ট-সাইড জিপ টুল। একাধিক ফাইল বেছে একটি ZIP আর্কাইভ তৈরি করুন।" />
+  <meta name="twitter:title" content="ZIP Compressor | Tool Hub" />
+  <meta name="twitter:description" content="Client-side ZIP tool. Select multiple files and create a ZIP archive." />
   <meta name="twitter:image" content="https://sakibhtml323-source.github.io/Tool-Hub/assets/og-image.png" />
   <link rel="icon" href="../assets/logo.svg" />
   <link rel="stylesheet" href="../assets/css/style.css" />
-  <title>জিপ কংপ্রেসর | Tool Hub</title>
+  <title>ZIP Compressor | Tool Hub</title>
 </head>
 <body>
-  <a href="#main" class="skip-link">মূল কন্টেন্টে যাও</a>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <header>
     <div class="container nav">
-      <a href="../index.html" class="back" aria-label="হোমে ফেরা">← Tool Hub</a>
+      <a href="../index.html" class="back" aria-label="Back to home">← Tool Hub</a>
       <nav class="breadcrumb" style="font-size:0.85rem;color:var(--muted);margin-bottom:0.5rem;">
-        <a href="../index.html" style="color:var(--muted);text-decoration:none;">হোম</a> &gt; জিপ কংপ্রেসর
+        <a href="../index.html" style="color:var(--muted);text-decoration:none;">Home</a> &gt; ZIP Compressor
       </nav>
-      <h1 style="font-size:1.15rem;font-weight:800;letter-spacing:-0.01em;">জিপ কংপ্রেসর</h1>
-      <div style="font-size:0.85rem;color:var(--muted);">ফাইল থেকে জিপ আর্কাইভ তৈরি করুন</div>
+      <h1 style="font-size:1.15rem;font-weight:800;letter-spacing:-0.01em;">ZIP Compressor</h1>
+      <div style="font-size:0.85rem;color:var(--muted);">Create a ZIP archive from files</div>
     </div>
   </header>
 
@@ -40,24 +40,24 @@
     <div class="container">
       <div class="tool-shell">
         <div class="field">
-          <label for="zip-files">ফাইল সিলেক্ট করুন (একাধিক চলবে)</label>
+          <label for="zip-files">Select files (multiple allowed)</label>
           <input type="file" id="zip-files" multiple class="file-input" />
         </div>
         <div class="field">
-          <label for="zip-name">জিপ ফাইলের নাম</label>
+          <label for="zip-name">ZIP file name</label>
           <input type="text" id="zip-name" value="archive.zip" />
         </div>
         <div class="btn-group">
-          <button id="zip-create" class="btn btn-primary" type="button" disabled>জিপ তৈরি করুন</button>
-          <button id="zip-download" class="btn btn-outline" type="button" disabled>ডাউনলোড করুন</button>
+          <button id="zip-create" class="btn btn-primary" type="button" disabled>Create ZIP</button>
+          <button id="zip-download" class="btn btn-outline" type="button" disabled>Download</button>
         </div>
 
-        <p class="howto">এক বা একাধিক ফাইল বেছে ZIP তৈরি করুন। কাজ ব্রাউজারেই হয়, সার্ভারে কিছু যায় না।</p>
+        <p class="howto">Choose one or more files to create a ZIP. Everything happens in your browser; nothing is sent to a server.</p>
         <div id="zip-alert" class="alert alert-info" role="status" aria-live="polite"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="#6366f1" stroke-width="2"/><path d="M12 8h.01M11 12h1v5h1" stroke="#6366f1" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span></span></div>
 
         <div id="zip-list" style="margin-top:1rem;color:var(--muted);font-size:0.85rem;"></div>
         <div class="download-area">
-          <a id="zip-download-link" class="download-btn" style="display:none;">জিপ ডাউনলোড করুন</a>
+          <a id="zip-download-link" class="download-btn" style="display:none;">Download ZIP</a>
         </div>
       </div>
     </div>
@@ -65,7 +65,7 @@
 
   <footer>
     <div class="container">
-      <p style="color:var(--muted);font-size:0.8rem;text-align:center;">ক্লায়েন্ট-সাইড — ডাটা ব্রাউজারের বাইরে যায় না।</p>
+      <p style="color:var(--muted);font-size:0.8rem;text-align:center;">Client-side — data never leaves your browser.</p>
     </div>
   </footer>
 
@@ -73,9 +73,9 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "জিপ কংপ্রেসর | Tool Hub",
+    "name": "ZIP Compressor | Tool Hub",
     "url": "https://sakibhtml323-source.github.io/Tool-Hub/tools/zip.html",
-    "description": "ক্লায়েন্ট-সাইড জিপ টুল। একাধিক ফাইল বেছে একটি ZIP আর্কাইভ তৈরি করুন।",
+    "description": "Client-side ZIP tool. Select multiple files and create a ZIP archive.",
     "isPartOf": {
       "@type": "WebSite",
       "name": "Tool Hub",

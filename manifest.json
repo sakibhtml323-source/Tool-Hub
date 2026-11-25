@@ -1,7 +1,7 @@
 {
   "name": "Tool Hub",
   "short_name": "Tool Hub",
-  "description": "বিনামূল্যে ক্লায়েন্ট-সাইড টুলসমালা — কিউআর, জিপ, জেএসওএন, পাসওয়ার্ড, ইউইউআইডি, বেস৬৪ ও আরও। কোনো সার্ভার ছাড়া।",
+  "description": "Free client-side toolkit — QR, ZIP, JSON, password, UUID, Base64 and more. No server needed.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#0b0d17",
@@ -27,6 +27,6 @@
     }
   ],
   "id": "./",
-  "lang": "bn",
+  "lang": "en",
   "scope": "./"
 }

@@ -23,19 +23,19 @@
   function bytes(s) { return new TextEncoder().encode(s).length; }
   document.getElementById('html-minify').addEventListener('click', function () {
     var html = input.value;
-    if (!html.trim()) { show('দয়া করে HTML কোড লিখুন', 'error'); return; }
+    if (!html.trim()) { show('Please enter HTML code', 'error'); return; }
     try {
       var res = minifyHTML(html), a = bytes(html), b = bytes(res);
       box.classList.add('has-content'); out.textContent = res;
-      show('HTML মিনিফাই করা হলো: ' + a + ' → ' + b + ' বাইট (' + (a ? Math.round((1 - b / a) * 100) : 0) + '% কম)।', 'success');
-    } catch (e) { show('মিনিফাইয়ে সমস্যা: ' + e.message, 'error'); }
+      show('HTML minified:  ' + a + ' → ' + b + '  bytes (' + (a ? Math.round((1 - b / a) * 100) : 0) + '% smaller).', 'success');
+    } catch (e) { show('Minify error:  ' + e.message, 'error'); }
   });
   copyBtn.addEventListener('click', function () {
     var t = out.textContent;
-    if (!t || t === 'আউটপুট এখানে আসবে') return;
+    if (!t || t === 'Output will appear here') return;
     ToolHub.copy(t).then(function () {
-      copyBtn.textContent = 'কপি করা হয়েছে!'; copyBtn.classList.add('copied');
-      setTimeout(function () { copyBtn.textContent = 'কপি'; copyBtn.classList.remove('copied'); }, 1500);
+      copyBtn.textContent = 'Copied!'; copyBtn.classList.add('copied');
+      setTimeout(function () { copyBtn.textContent = 'Copy'; copyBtn.classList.remove('copied'); }, 1500);
     });
   });
 })();

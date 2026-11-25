@@ -25,16 +25,16 @@
         out.textContent = uuids.join('\n');
         copyBtn.disabled = false;
         alertBox.className = 'alert alert-success show';
-        alertBox.querySelector('span').textContent = n + 'টি UUID তৈরি করা হলো।';
+        alertBox.querySelector('span').textContent = n + (n === 1 ? ' UUID generated.' : ' UUIDs generated.');
       });
 
       copyBtn.addEventListener('click', function(){
         const text = out.textContent;
-        if(!text || text === 'আউটপুট এখানে আসবে') return;
+        if(!text || text === 'Output will appear here') return;
         ToolHub.copy(text).then(function(){
-          copyBtn.textContent = 'কপি করা হয়েছে!';
+          copyBtn.textContent = 'Copied!';
           copyBtn.classList.add('copied');
-          setTimeout(()=>{ copyBtn.textContent='কপি'; copyBtn.classList.remove('copied'); }, 1500);
+          setTimeout(()=>{ copyBtn.textContent='Copy'; copyBtn.classList.remove('copied'); }, 1500);
         });
       });
     })();

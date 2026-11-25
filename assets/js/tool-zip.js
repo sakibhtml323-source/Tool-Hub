@@ -95,26 +95,26 @@
     if (!selected.length) { createBtn.disabled = true; listEl.textContent = ''; return; }
     var total = selected.reduce(function (s, f) { return s + f.size; }, 0);
     listEl.textContent = selected.map(function (f) { return '• ' + f.name + ' (' + (f.size / 1024).toFixed(1) + ' KB)'; }).join('\n') +
-      '\nমোট: ' + (total / 1024 / 1024).toFixed(2) + ' MB';
+      '\nTotal:  ' + (total / 1024 / 1024).toFixed(2) + ' MB';
     createBtn.disabled = false;
   });
 
   createBtn.addEventListener('click', async function () {
-    if (!selected.length) { show('দয়া করে ফাইল বেছে নিন', 'error'); return; }
+    if (!selected.length) { show('Please select files', 'error'); return; }
     var total = selected.reduce(function (s, f) { return s + f.size; }, 0);
     if (selected.length > 65000 || total > 1.5 * 1024 * 1024 * 1024 || selected.some(function (f) { return f.size > 4e9; })) {
-      show('ফাইলের সংখ্যা বা মোট আকার খুব বেশি। ১.৫ GB-এর কম ফাইল বেছে নিন।', 'error'); return;
+      show('Too many files or the total size is too large. Select files totaling less than 1.5 GB.', 'error'); return;
     }
-    createBtn.disabled = true; show('জিপ তৈরি হচ্ছে…', 'info');
+    createBtn.disabled = true; show('Creating ZIP…', 'info');
     try {
       reset();
       zipBlob = await buildZip(selected);
       blobUrl = URL.createObjectURL(zipBlob);
       link.href = blobUrl; link.download = zipName(); link.style.display = 'inline-flex';
       downloadBtn.disabled = false;
-      show(selected.length + 'টি ফাইলের জিপ তৈরি হলো (' + (zipBlob.size / 1024).toFixed(1) + ' KB)।', 'success');
+      show('ZIP created with ' + selected.length + (selected.length === 1 ? ' file (' : ' files (') + (zipBlob.size / 1024).toFixed(1) + ' KB).', 'success');
     } catch (err) {
-      show('জিপ তৈরি করতে সমস্যা: ' + err.message, 'error');
+      show('Failed to create ZIP:  ' + err.message, 'error');
     }
     createBtn.disabled = false;
   });

@@ -13,29 +13,29 @@
       document.getElementById('b64-encode').addEventListener('click',function(){
         try{
           const t=input.value;
-          if(!t){ show('দয়া করে টেক্সট লিখুন','error'); return; }
+          if(!t){ show('Please enter some text','error'); return; }
           const enc = btoa(unescape(encodeURIComponent(t)));
           box.classList.add('has-content'); out.textContent=enc;
-          show('বেস৬৪ এনকোড করা হলো।','success');
-        }catch(e){ show('এনকোডে সমস্যা: '+e.message,'error'); }
+          show('Base64 encoded.','success');
+        }catch(e){ show('Encoding error:  '+e.message,'error'); }
       });
 
       document.getElementById('b64-decode').addEventListener('click',function(){
         try{
           const t=input.value.trim();
-          if(!t){ show('দয়া করে বেস৬৪ টেক্সট লিখুন','error'); return; }
+          if(!t){ show('Please enter Base64 text','error'); return; }
           const dec = decodeURIComponent(escape(atob(t.replace(/\s+/g,'').replace(/-/g,'+').replace(/_/g,'/'))));
           box.classList.add('has-content'); out.textContent=dec;
-          show('বেস৬৪ ডিকোড করা হলো।','success');
-        }catch(e){ show('ডিকোডে সমস্যা — সঠিক বেস৬৪ লিখুন।','error'); }
+          show('Base64 decoded.','success');
+        }catch(e){ show('Decoding error — enter valid Base64.','error'); }
       });
 
       copyBtn.addEventListener('click',function(){
         const t=out.textContent;
-        if(!t || t==='আউটপুট এখানে আসবে') return;
+        if(!t || t==='Output will appear here') return;
         ToolHub.copy(t).then(function(){
-          copyBtn.textContent='কপি করা হয়েছে!'; copyBtn.classList.add('copied');
-          setTimeout(()=>{copyBtn.textContent='কপি';copyBtn.classList.remove('copied');},1500);
+          copyBtn.textContent='Copied!'; copyBtn.classList.add('copied');
+          setTimeout(()=>{copyBtn.textContent='Copy';copyBtn.classList.remove('copied');},1500);
         });
       });
     })();

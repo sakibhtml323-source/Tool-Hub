@@ -1,38 +1,38 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ক্লায়েন্ট-সাইড UUID জেনারেটর। এক সাথে ১০০টি পর্যন্ত UUID v4 তৈরি ও কপি করুন।" />
+  <meta name="description" content="Client-side UUID generator. Generate and copy up to 100 UUID v4 values at once." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://sakibhtml323-source.github.io/Tool-Hub/tools/uuid.html" />
   <meta name="author" content="sakibhtml323-source (sakibsheikho69252@gmail.com)" />
-  <meta property="og:title" content="UUID জেনারেটর | Tool Hub" />
-  <meta property="og:description" content="ক্লায়েন্ট-সাইড UUID জেনারেটর। এক সাথে ১০০টি পর্যন্ত UUID v4 তৈরি ও কপি করুন।" />
+  <meta property="og:title" content="UUID Generator | Tool Hub" />
+  <meta property="og:description" content="Client-side UUID generator. Generate and copy up to 100 UUID v4 values at once." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sakibhtml323-source.github.io/Tool-Hub/tools/uuid.html" />
   <meta property="og:image" content="https://sakibhtml323-source.github.io/Tool-Hub/assets/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#0b0d17" />
-  <meta name="twitter:title" content="UUID জেনারেটর | Tool Hub" />
-  <meta name="twitter:description" content="ক্লায়েন্ট-সাইড UUID জেনারেটর। এক সাথে ১০০টি পর্যন্ত UUID v4 তৈরি ও কপি করুন।" />
+  <meta name="twitter:title" content="UUID Generator | Tool Hub" />
+  <meta name="twitter:description" content="Client-side UUID generator. Generate and copy up to 100 UUID v4 values at once." />
   <meta name="twitter:image" content="https://sakibhtml323-source.github.io/Tool-Hub/assets/og-image.png" />
   <link rel="icon" href="../assets/logo.svg" />
   <link rel="stylesheet" href="../assets/css/style.css" />
-  <title>UUID জেনারেটর | Tool Hub</title>
+  <title>UUID Generator | Tool Hub</title>
 </head>
 <body>
-  <a href="#main" class="skip-link">মূল কন্টেন্টে যাও</a>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <header>
     <div class="container nav">
-      <a href="../index.html" class="back" aria-label="হোমে ফেরা">← Tool Hub</a>
+      <a href="../index.html" class="back" aria-label="Back to home">← Tool Hub</a>
       <nav class="breadcrumb" style="font-size:0.85rem;color:var(--muted);margin-bottom:0.5rem;">
-        <a href="../index.html" style="color:var(--muted);text-decoration:none;">হোম</a> &gt; UUID জেনারেটর
+        <a href="../index.html" style="color:var(--muted);text-decoration:none;">Home</a> &gt; UUID Generator
       </nav>
-      <h1 style="font-size:1.15rem;font-weight:800;letter-spacing:-0.01em;">UUID জেনারেটর</h1>
-      <div style="font-size:0.85rem;color:var(--muted);">ইউইউআইডি v4 তৈরি ও কপি করুন</div>
+      <h1 style="font-size:1.15rem;font-weight:800;letter-spacing:-0.01em;">UUID Generator</h1>
+      <div style="font-size:0.85rem;color:var(--muted);">Generate and copy UUID v4</div>
     </div>
   </header>
 
@@ -40,23 +40,23 @@
     <div class="container">
       <div class="tool-shell">
         <div class="field">
-          <label for="uuid-count">কতটি UUID তৈরি করতে চান</label>
+          <label for="uuid-count">How many UUIDs do you want to generate</label>
           <input type="number" id="uuid-count" value="1" min="1" max="100" />
         </div>
         <div class="btn-group">
-          <button id="uuid-gen" class="btn btn-primary" type="button">UUID তৈরি করুন</button>
-          <button id="uuid-copy" class="btn btn-outline" type="button" disabled>কপি</button>
+          <button id="uuid-gen" class="btn btn-primary" type="button">Generate UUID</button>
+          <button id="uuid-copy" class="btn btn-outline" type="button" disabled>Copy</button>
         </div>
 
-        <p class="howto">কতগুলো (১–১০০) তৈরি করবেন বেছে নিন। ব্রাউজারের নিরাপদ র‍্যান্ডম জেনারেটর (Crypto API) ব্যবহার হয়।</p>
+        <p class="howto">Choose how many (1–100) to generate. The secure random generator of the browser (Crypto API) is used.</p>
         <div id="uuid-alert" class="alert alert-info" role="status" aria-live="polite"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="#6366f1" stroke-width="2"/><path d="M12 8h.01M11 12h1v5h1" stroke="#6366f1" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span></span></div>
 
         <div class="output-box" id="uuid-output" aria-live="polite">
           <div class="output-header">
-            <span class="lbl">ফলাফল</span>
-            <button id="uuid-copy-btn" class="copy-btn" type="button">কপি</button>
+            <span class="lbl">Result</span>
+            <button id="uuid-copy-btn" class="copy-btn" type="button">Copy</button>
           </div>
-          <div id="uuid-output-text">আউটপুট এখানে আসবে</div>
+          <div id="uuid-output-text">Output will appear here</div>
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@
 
   <footer>
     <div class="container">
-      <p style="color:var(--muted);font-size:0.8rem;text-align:center;">ক্লায়েন্ট-সাইড — ডাটা ব্রাউজারের বাইরে যাবে না।</p>
+      <p style="color:var(--muted);font-size:0.8rem;text-align:center;">Client-side — data never leaves your browser.</p>
     </div>
   </footer>
 
@@ -72,9 +72,9 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "UUID জেনারেটর | Tool Hub",
+    "name": "UUID Generator | Tool Hub",
     "url": "https://sakibhtml323-source.github.io/Tool-Hub/tools/uuid.html",
-    "description": "ক্লায়েন্ট-সাইড UUID জেনারেটর। এক সাথে ১০০টি পর্যন্ত UUID v4 তৈরি ও কপি করুন।",
+    "description": "Client-side UUID generator. Generate and copy up to 100 UUID v4 values at once.",
     "isPartOf": {
       "@type": "WebSite",
       "name": "Tool Hub",
